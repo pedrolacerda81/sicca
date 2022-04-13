@@ -1,16 +1,7 @@
-# sicca
+# Sistema Computacional de Composição de Alimentos - SiCCA
 
-A new Flutter project.
+    The Computational Food Composition System's or, the acronym in Portuguese, SiCCA's mobile application developed by Pedro Lacerda da Costa with Flutter & Dart for the members of the project to help them accomplish their tasks.
 
-## Getting Started
+# Build Status
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    CI/CD in development...
