@@ -3,10 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:sicca/core/components/helpers/pallete.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class SWAppBar extends StatelessWidget implements PreferredSizeWidget {
+class SiCCAAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool hasBackButton;
 
-  const SWAppBar({
+  const SiCCAAppBar({
     Key? key,
     this.hasBackButton = false,
   }) : super(key: key);
