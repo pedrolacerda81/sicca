@@ -13,7 +13,7 @@ class SplashListView extends StatelessWidget {
         children: [
           const Spacer(),
           SizedBox(
-            height: 110.0,
+            height: 100.0,
             child: Image.asset('assets/icons/healthy-food.png'),
           ),
           const SizedBox(height: 10.0),
