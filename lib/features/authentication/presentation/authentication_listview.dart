@@ -15,19 +15,30 @@ class AuthenticationListView extends StatelessWidget {
       children: [
         SizedBox(height: screenSize.height * 0.06),
         SizedBox(
+          key: const Key('authentication_logo_image'),
           height: screenSize.height * 0.1,
           child: Image.asset('assets/icons/healthy-food.png'),
         ),
         SizedBox(height: screenSize.height * 0.01),
-        titleRow(text: 'Sistema Computacional'),
-        titleRow(text: 'de Composição de Alimentos'),
-        titleRow(text: 'SiCCA'),
+        titleRow(
+          key: const Key('authentication_title_row_one'),
+          text: 'Sistema Computacional',
+        ),
+        titleRow(
+          key: const Key('authentication_title_row_two'),
+          text: 'de Composição de Alimentos',
+        ),
+        titleRow(
+          key: const Key('authentication_title_row_three'),
+          text: 'SiCCA',
+        ),
         SizedBox(height: screenSize.height * 0.03),
         AuthenticationForm(),
         SizedBox(height: screenSize.height * 0.03),
         Container(
           margin: EdgeInsets.symmetric(horizontal: screenSize.width * 0.05),
           child: SiCCAMainButton(
+            key: const Key('authentication_sign_in_button'),
             label: 'ENTRAR',
             onPressed: () {},
           ),
@@ -47,7 +58,8 @@ class AuthenticationListView extends StatelessWidget {
         fontWeight: isBold ? FontWeight.bold : FontWeight.normal,
       );
 
-  Row titleRow({required String text}) => Row(
+  Row titleRow({required Key key, required String text}) => Row(
+        key: key,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(

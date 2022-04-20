@@ -23,12 +23,12 @@ void main() {
     'Splash Page Widget Test Group',
     () {
       testWidgets(
-        'If there is the correct image on the splash screen',
+        'If there is the logo image on the splash screen',
         (WidgetTester tester) async {
           await tester.pumpWidget(buildSplashPage());
           await tester.pumpAndSettle();
 
-          expect(find.byKey(const Key('splash_image')), findsOneWidget);
+          expect(find.byKey(const Key('splash_logo_image')), findsOneWidget);
         },
       );
 

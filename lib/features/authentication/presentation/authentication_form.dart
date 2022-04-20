@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:sicca/core/components/helpers/pallete.dart';
 
 class AuthenticationForm extends StatelessWidget {
   AuthenticationForm({Key? key}) : super(key: key);
@@ -26,6 +28,9 @@ class AuthenticationForm extends StatelessWidget {
                 labelText: 'E-mail',
                 hintText: 'name@email.com',
               ),
+              style: GoogleFonts.nunito(
+                color: Pallete.darkPurple,
+              ),
             ),
             SizedBox(height: screenSize.height * 0.03),
             TextFormField(
@@ -35,6 +40,9 @@ class AuthenticationForm extends StatelessWidget {
               decoration: const InputDecoration(
                 labelText: 'Senha',
                 hintText: 'Senha',
+              ),
+              style: GoogleFonts.nunito(
+                color: Pallete.darkPurple,
               ),
             ),
           ],
