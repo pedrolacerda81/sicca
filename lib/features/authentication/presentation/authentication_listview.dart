@@ -1,6 +1,8 @@
+import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sicca/core/components/helpers/pallete.dart';
+import 'package:sicca/core/components/widgets/main_button.dart';
 import 'package:sicca/features/authentication/presentation/authentication_form.dart';
 
 class AuthenticationListView extends StatelessWidget {
@@ -8,18 +10,28 @@ class AuthenticationListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size screenSize = Get.size;
     return ListView(
       children: [
+        SizedBox(height: screenSize.height * 0.06),
         SizedBox(
-          height: 100.0,
+          height: screenSize.height * 0.1,
           child: Image.asset('assets/icons/healthy-food.png'),
         ),
-        const SizedBox(height: 10.0),
+        SizedBox(height: screenSize.height * 0.01),
         titleRow(text: 'Sistema Computacional'),
         titleRow(text: 'de Composição de Alimentos'),
         titleRow(text: 'SiCCA'),
-        const SizedBox(height: 20.0),
+        SizedBox(height: screenSize.height * 0.03),
         AuthenticationForm(),
+        SizedBox(height: screenSize.height * 0.03),
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: screenSize.width * 0.05),
+          child: SiCCAMainButton(
+            label: 'ENTRAR',
+            onPressed: () {},
+          ),
+        ),
       ],
     );
   }

@@ -13,11 +13,13 @@ class SplashListView extends StatelessWidget {
         children: [
           const Spacer(),
           SizedBox(
+            key: const Key('splash_image'),
             height: 100.0,
             child: Image.asset('assets/icons/healthy-food.png'),
           ),
           const SizedBox(height: 10.0),
           Row(
+            key: const Key('splash_title_row_one'),
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
@@ -27,6 +29,7 @@ class SplashListView extends StatelessWidget {
             ],
           ),
           Row(
+            key: const Key('splash_title_row_two'),
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
@@ -37,6 +40,7 @@ class SplashListView extends StatelessWidget {
           ),
           const Spacer(),
           Row(
+            key: const Key('splash_version_row'),
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
