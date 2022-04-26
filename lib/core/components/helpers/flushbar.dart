@@ -40,11 +40,11 @@ class FlushBar {
   }) {
     switch (type) {
       case FlushBarType.error:
-        return FontAwesomeIcons.timesCircle;
+        return FontAwesomeIcons.circleXmark;
       case FlushBarType.success:
-        return FontAwesomeIcons.checkCircle;
+        return FontAwesomeIcons.circleCheck;
       default:
-        return FontAwesomeIcons.infoCircle;
+        return FontAwesomeIcons.circleInfo;
     }
   }
 
