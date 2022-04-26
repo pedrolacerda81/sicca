@@ -9,7 +9,7 @@ class FakeAuthenticationBloc extends Fake implements AuthenticationBloc {}
 
 void main() {
   BlocProvider buildAuthenticationPage() {
-    return BlocProvider<AuthenticationBloc>(
+    return BlocProvider<FakeAuthenticationBloc>(
       create: (_) => FakeAuthenticationBloc(),
       child: const GetMaterialApp(
         home: Scaffold(
@@ -20,7 +20,7 @@ void main() {
   }
 
   group(
-    'Authentication Page Widget Test Group',
+    'Authentication Page Widget Test Group -->',
     () {
       testWidgets(
         'If there is the logo image at the authentication page',

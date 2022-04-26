@@ -9,7 +9,7 @@ class FakeSplashBloc extends Fake implements SplashBloc {}
 
 void main() {
   BlocProvider buildSplashPage() {
-    return BlocProvider<SplashBloc>(
+    return BlocProvider<FakeSplashBloc>(
       create: (_) => FakeSplashBloc(),
       child: const GetMaterialApp(
         home: Scaffold(
@@ -20,7 +20,7 @@ void main() {
   }
 
   group(
-    'Splash Page Widget Test Group',
+    'Splash Page Widget Test Group -->',
     () {
       testWidgets(
         'If there is the logo image on the splash screen',
