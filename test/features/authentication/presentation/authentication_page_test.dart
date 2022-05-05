@@ -9,11 +9,23 @@ class FakeAuthenticationBloc extends Fake implements AuthenticationBloc {}
 
 void main() {
   BlocProvider buildAuthenticationPage() {
+    final GlobalKey<FormState> _authenticationFormKey = GlobalKey<FormState>();
+    final TextEditingController _emailController = TextEditingController();
+    final TextEditingController _passwordController = TextEditingController();
+    final FocusNode _emailFocusNode = FocusNode();
+    final FocusNode _passwordFocusNode = FocusNode();
     return BlocProvider<FakeAuthenticationBloc>(
       create: (_) => FakeAuthenticationBloc(),
-      child: const GetMaterialApp(
+      child: GetMaterialApp(
         home: Scaffold(
-          body: AuthenticationListView(),
+          body: AuthenticationListView(
+            authenticationFormKey: _authenticationFormKey,
+            emailController: _emailController,
+            emailFocusNode: _emailFocusNode,
+            passwordController: _passwordController,
+            passwordFocusNode: _passwordFocusNode,
+            handleSubmitSignInForm: () {},
+          ),
         ),
       ),
     );
@@ -39,11 +51,23 @@ void main() {
           await tester.pumpWidget(buildAuthenticationPage());
           await tester.pumpAndSettle();
 
-          expect(find.byKey(const Key('authentication_title_row_one')), findsOneWidget);
-          expect(find.byKey(const Key('authentication_title_row_two')), findsOneWidget);
-          expect(find.byKey(const Key('authentication_title_row_three')), findsOneWidget);
+          expect(find.byKey(const Key('authentication_title_row_one')),
+              findsOneWidget);
+          expect(find.byKey(const Key('authentication_title_row_two')),
+              findsOneWidget);
+          expect(find.byKey(const Key('authentication_title_row_three')),
+              findsOneWidget);
         },
       );
+
+      testWidgets('If there is the sign in form on authentication page',
+          (WidgetTester tester) async {
+        await tester.pumpWidget(buildAuthenticationPage());
+        await tester.pumpAndSettle();
+
+        expect(find.byKey(const Key('authentication_sign_in_form')),
+            findsOneWidget);
+      });
 
       testWidgets(
         'If there is the sign in button on authentication page',
@@ -51,7 +75,8 @@ void main() {
           await tester.pumpWidget(buildAuthenticationPage());
           await tester.pumpAndSettle();
 
-          expect(find.byKey(const Key('authentication_sign_in_button')), findsOneWidget);
+          expect(find.byKey(const Key('authentication_sign_in_button')),
+              findsOneWidget);
         },
       );
     },

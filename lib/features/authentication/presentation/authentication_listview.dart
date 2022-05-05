@@ -6,7 +6,22 @@ import 'package:sicca/core/components/widgets/main_button.dart';
 import 'package:sicca/features/authentication/presentation/authentication_form.dart';
 
 class AuthenticationListView extends StatelessWidget {
-  const AuthenticationListView({Key? key}) : super(key: key);
+  const AuthenticationListView({
+    Key? key,
+    required this.handleSubmitSignInForm,
+    required this.authenticationFormKey,
+    required this.emailController,
+    required this.passwordController,
+    required this.emailFocusNode,
+    required this.passwordFocusNode,
+  }) : super(key: key);
+
+  final void Function() handleSubmitSignInForm;
+  final GlobalKey<FormState> authenticationFormKey;
+  final TextEditingController emailController;
+  final TextEditingController passwordController;
+  final FocusNode emailFocusNode;
+  final FocusNode passwordFocusNode;
 
   @override
   Widget build(BuildContext context) {
@@ -33,14 +48,21 @@ class AuthenticationListView extends StatelessWidget {
           text: 'SiCCA',
         ),
         SizedBox(height: screenSize.height * 0.03),
-        AuthenticationForm(),
+        AuthenticationForm(
+          key: const Key('authentication_sign_in_form'),
+          authenticationFormKey: authenticationFormKey,
+          emailController: emailController,
+          emailFocusNode: emailFocusNode,
+          passwordController: passwordController,
+          passwordFocusNode: passwordFocusNode,
+        ),
         SizedBox(height: screenSize.height * 0.03),
         Container(
           margin: EdgeInsets.symmetric(horizontal: screenSize.width * 0.05),
           child: SiCCAMainButton(
             key: const Key('authentication_sign_in_button'),
             label: 'ENTRAR',
-            onPressed: () {},
+            onPressed: handleSubmitSignInForm,
           ),
         ),
       ],

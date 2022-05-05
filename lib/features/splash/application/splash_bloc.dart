@@ -14,7 +14,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         await event.map(
           checkUserStatus: (checkUserStatusEvent) async {
             await Future.delayed(
-              const Duration(seconds: 2),
+              const Duration(seconds: 3),
               () => emit(const SplashState.userUnauthenticated()),
             );
           },

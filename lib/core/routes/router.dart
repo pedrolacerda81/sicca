@@ -4,6 +4,6 @@ import 'package:sicca/features/authentication/presentation/authentication_page.d
 
 final List<GetPage> routes = [
   GetPage(name: '/splash', page: () => const SplashPage()),
-  GetPage(name: '/authentication', page: () => const AuthenticationPage()),
+  GetPage(name: '/authentication', page: () => AuthenticationPage()),
   // GetPage(name: '/main', page: () => const SplashPage()),
 ];
