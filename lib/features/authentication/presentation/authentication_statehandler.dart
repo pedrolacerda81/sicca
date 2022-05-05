@@ -5,7 +5,15 @@ import 'package:sicca/features/authentication/application/authentication_bloc.da
 import 'package:sicca/features/authentication/presentation/authentication_listview.dart';
 
 class AuthenticationStateHandler extends StatelessWidget {
-  const AuthenticationStateHandler({Key? key}) : super(key: key);
+  AuthenticationStateHandler({Key? key}) : super(key: key);
+
+  final GlobalKey<FormState> _authenticationFormKey = GlobalKey<FormState>();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final FocusNode _emailFocusNode = FocusNode();
+  final FocusNode _passwordFocusNode = FocusNode();
+
+  Future<void> handleSubmitSignInForm({required BuildContext context}) async {}
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +26,15 @@ class AuthenticationStateHandler extends StatelessWidget {
           ),
           body: state.maybeMap(
             orElse: () => const LoadingContainer(),
-            initial: (initialState) => const AuthenticationListView(),
+            initial: (initialState) => AuthenticationListView(
+              authenticationFormKey: _authenticationFormKey,
+              emailController: _emailController,
+              emailFocusNode: _emailFocusNode,
+              passwordController: _passwordController,
+              passwordFocusNode: _passwordFocusNode,
+              handleSubmitSignInForm: () =>
+                  handleSubmitSignInForm(context: context),
+            ),
           ),
         );
       },
