@@ -25,7 +25,9 @@ class AuthenticationStateHandler extends StatelessWidget {
             orElse: () => null,
           ),
           body: state.maybeMap(
-            orElse: () => const LoadingContainer(),
+            orElse: () => const LoadingContainer(
+              key: Key('AuthenticationLoadingContainer'),
+            ),
             initial: (initialState) => AuthenticationListView(
               authenticationFormKey: _authenticationFormKey,
               emailController: _emailController,

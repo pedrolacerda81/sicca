@@ -32,7 +32,7 @@ class App extends StatelessWidget {
       supportedLocales: const [
         Locale('pt', 'BR'),
       ],
-      title: 'New Value',
+      title: 'Sicca',
       theme: ThemeData(
         primaryColor: Pallete.darkGrey,
         primarySwatch: Colors.deepPurple,

@@ -7,13 +7,14 @@ class SiCCAAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool hasBackButton;
 
   const SiCCAAppBar({
-    Key? key,
+    required Key key,
     this.hasBackButton = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      key: key,
       backgroundColor: Pallete.darkPurple,
       title: Text(
         'SiCCA',

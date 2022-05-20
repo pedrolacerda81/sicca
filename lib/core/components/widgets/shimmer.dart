@@ -8,7 +8,7 @@ class SiCCAShimmer extends StatelessWidget {
   final Color highlightColor;
 
   const SiCCAShimmer({
-    Key? key,
+    required Key key,
     required this.width,
     required this.height,
     required this.primaryColor,
@@ -18,6 +18,7 @@ class SiCCAShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shimmer.fromColors(
+      key: key,
       baseColor: primaryColor,
       highlightColor: highlightColor,
       child: Container(

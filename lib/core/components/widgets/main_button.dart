@@ -5,7 +5,7 @@ import 'package:sicca/core/components/helpers/pallete.dart';
 
 class SiCCAMainButton extends StatelessWidget {
   const SiCCAMainButton({
-    Key? key,
+    required Key key,
     required this.label,
     required this.onPressed,
   }) : super(key: key);
@@ -16,6 +16,7 @@ class SiCCAMainButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size screenSize = Get.size;
     return ElevatedButton(
+      key: key,
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
         shape: RoundedRectangleBorder(
